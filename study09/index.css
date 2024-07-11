@@ -1,0 +1,62 @@
+* {margin: 0; padding: 0; box-sizing: border-box;}
+nav {display: inline-block; position: fixed; top:0; left: 0; width: 150px; height: 100vh; padding: 10px; background-color: blanchedalmond; z-index: 1;}
+nav article img {width: 100%; margin-bottom: 50px;}
+nav article img:hover {cursor: pointer; box-shadow:5px 5px 10px 5px rgba(77, 71, 71, 0.2);}
+nav a {display: block; width: 100%; margin: 5px 0; padding: 5px 0; font-weight: bold; text-decoration: none; color: black; text-align: center;}
+nav a:hover {color: rgb(35, 223, 132);}
+
+main {width: calc(100% - 150px); margin-left: 150px; position: relative;}
+main section {height: 500px;}
+main section ul {list-style-type: none; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px; padding: 20px;}
+main section ul li {height: calc((100vh - (20px * 4)) / 3); background-color: #fff;}
+main section ul li:hover {box-shadow:5px 5px 10px 5px rgba(77, 71, 71, 0.6); cursor: pointer;}
+
+.display-none {display: none;}
+
+.bg {width: 100%; height: 100vh; background-position: center center; background-size: cover; background-repeat: no-repeat; background-attachment: fixed; opacity: 0.8;}
+.bg1 {background-image: url("./bg1.jpg"); }
+.bg2 {background-image: url("./bg2.jpg"); }
+.bg3 {background-image: url("./bg6.jpg"); }
+.bg4 {background-image: url("./bg5.jpg"); }
+.bg5 {background-image: url("./bg7.jpg"); }
+
+
+
+.bg-video__content {
+    width: 100%; /* 비디오 너비 화면에 맞추기 */
+    height: 100%; /* 비디오 높이 화면에 맞추기 */
+    object-fit: cover; /* 비디오가 요소에 맞춰지도록 설정 */
+    z-index: 0;
+}
+
+.bi {background-position: center center; background-size: cover; background-repeat: no-repeat;}
+.bi1 {background-image: url("https://cdn.pixabay.com/photo/2023/06/14/06/22/cat-8062388_1280.jpg");}
+.bi2 {background-image: url("https://cdn.pixabay.com/photo/2019/11/08/11/56/kitten-4611189_1280.jpg");}
+.bi3 {background-image: url("https://cdn.pixabay.com/photo/2023/06/29/12/28/cats-8096304_1280.jpg");}
+.bi4 {background-image: url("https://cdn.pixabay.com/photo/2020/03/31/19/20/dog-4988985_1280.jpg");}
+.bi5 {background-image: url("https://cdn.pixabay.com/photo/2016/02/26/16/32/bulldog-1224267_1280.jpg");}
+.bi6 {background-image: url("https://cdn.pixabay.com/photo/2022/07/07/07/25/dog-7306691_1280.jpg");}
+.bi7 {background-image: url("https://cdn.pixabay.com/photo/2018/02/18/13/03/cute-3162209_1280.jpg");}
+.bi8 {background-image: url("https://cdn.pixabay.com/photo/2016/03/05/22/54/animal-1239398_1280.jpg");}
+.bi9 {background-image: url("https://cdn.pixabay.com/photo/2018/02/15/09/12/underwater-3154726_1280.jpg");}
+.bi10 {background-image: url("./모코코/uds.jpg");}
+.bi11 {background-image: url("./모코코/idk.jpg");}
+.bi12 {background-image: url("./모코코/m5.png");}
+.bi13 {background-image: url("./모코코/m2.jpg");}
+.bi14 {background-image: url("./모코코/m3.jpg");}
+.bi15 {background-image: url("./움짤/m4.gif");}
+.bi16 {background-image: url("./움짤/pun.gif");}
+.bi17 {background-image: url("./움짤/붓.gif");}
+.bi18 {background-image: url("./움짤/붓2.gif");}
+.bi19 {background-image: url("./움짤/슬.gif");}
+.bi20 {background-image: url("./움짤/기공.gif");}
+.bi21 {background-image: url("./움짤/gon.gif");}
+.bi22 {background-image: url("./움짤/6_.gif");}
+.bi23 {background-image: url("./움짤/24.gif");}
+.bi24 {background-image: url("./m1.jpg");}
+
+
+@media only screen and (max-width: 900px) {
+    main section ul {grid-template-columns: 1fr 1fr;}
+    main section ul li {height: calc((100vh - (20px * 5)) / 4);}
+}
