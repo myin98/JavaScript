@@ -19,7 +19,7 @@ const event4 = data => {document.getElementById("menu4").innerHTML = data.respon
  document.getElementById("event4").onclick = () => $get("./html/menu4.html" , {} , event4); */
 
  const a = document.getElementsByClassName("가져오기");
- const d = document.getElementsByClassName("지우기")
+ const d = document.getElementsByClassName("비우기")
  for(let tag of a){
     // console.log(tag, tag.id, tag.hash,tag.hash.substring(1));
      const event = data => document.getElementById(tag.hash.substring(1)).innerHTML = data.response
