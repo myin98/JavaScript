@@ -1,0 +1,26 @@
+* {margin: 0; padding: 0; box-sizing: border-box;}
+nav {display: inline-block; position: fixed; top:0; left: 0; width: 150px; height: 100vh; padding: 10px; background-color: blanchedalmond;}
+nav article img {width: 100%; margin-bottom: 50px;}
+nav article img:hover {cursor: pointer; box-shadow:5px 5px 10px 5px rgba(77, 71, 71, 0.2);}
+nav a {display: block; width: 100%; margin: 5px 0; padding: 5px 0; font-weight: bold; text-decoration: none; color: black; text-align: center;}
+nav a:hover {color: rgb(35, 223, 132); cursor: pointer;}
+
+main {width: calc(100% - 150px); margin-left: 150px; position: relative;}
+main section {height: 500px;}
+main section ul {list-style-type: none; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px; padding: 20px;}
+main section ul li {height: calc((100vh - (20px * 4)) / 3); background-color: #fff;}
+main section ul li:hover {box-shadow:5px 5px 10px 5px rgba(77, 71, 71, 0.6); cursor: pointer;}
+main section ul li img {width: 100%; height: 100%; object-fit:cover;}
+
+.display-none {display: none;}
+
+.bg {width: 100%; height: 100vh; background-position: center center; background-size: cover; background-repeat: no-repeat; background-attachment: fixed; opacity: 0.8;}
+.bg1 {background-image: url("../study09/bg1.jpg");}
+.bg2 {background-image: url("./study09/bg2.jpg");}
+.bg3 {background-image: url("./study09/bg3.jpg");}
+.bg4 {background-image: url("./study09/bg4.jpg");}
+
+@media only screen and (max-width: 900px) {
+    main section ul {grid-template-columns: 1fr 1fr;}
+    main section ul li {height: calc((100vh - (20px * 5)) / 4);}
+}
