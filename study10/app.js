@@ -19,52 +19,53 @@ const model = [
 
 const view = (list) => {
     let html = "";
-    for(let f of list){
-        let url = f.domain + f.path;
-        html += `<li>
-                <img src="${url}">
-            </li>`
-    }
+    for(let f of list)
+        
+        html += `<li><p>${f.bad}</p><img src="${f.domain + f.path}"><h1>${f.good}</h1></li>`;
+    
     document.getElementsByTagName("ul")[0].innerHTML = html;
     event(list);
 
 }
-const event2 = data => {
-    let res = JSON.parse(data.response);
-    if(res.status) {
-        view(res.result);
 
-    }
-}
 
 const event = (list) => {//이미지 이벤트 추가
-    const lis = document.getElementsByTagName("li");
+    const lis = document.getElementsByTagName("h1");
+    const liss = document.getElementsByTagName("p");
     for(let index = 0; index < lis.length; index++){
-       lis[index].onclick = () => {
+       lis[index].onclick = (e) => {
+        e.stopPropagation
+        const listIndex = index;
       //  view(list.toSpliced(index, 1));
-      let url = `http://lh/json/no/${list[index].no}/type/${list[index].type}`;
-      $get(url,{},event2);
-       }
-    }
-}
-
-const a = document.getElementsByTagName("a");
-for(let tag of a) {
-    const event = data => {
-        //console.log(JSON.parse(data.response));
-        const res = JSON.parse(data.response);
-        if(res.status) {
-            view(res.result);
-    
-        }
+      $get(`http://lh/json/no/${list[listIndex].no}/type/${list[listIndex].type}`,{},callBack);
+       };
        
     }
+    for(let index = 0; index < liss.length; index++){
+        liss[index].onclick = (e) => {
+            e.stopPropagation
+            const listIndex = index;
+       //  view(list.toSpliced(index, 1));
+       $get(`http://lh/json/no/${list[listIndex].no}/type/${list[listIndex].type}`,{},callBack);
+        };
+        
+     }
+ 
+
+}
+const callBack = data => {
+    const res = JSON.parse(data.response);
+    console.log(res);
+    if(res.status) view(res.result);
+}
+for(let tag of document.getElementsByTagName("a")){
+
+
      tag.onclick = (e) => {
         e.preventDefault();
-        let type = Number(tag.id);
-        // console.log(no, model[no]);
-        let url = `http://lh/json/type/${type}`;
-        $get(url,{},event);
+        
+        $get(`http://lh/json/type/${Number(tag.id)}`, {}, callBack);
+        
      }
 
 
